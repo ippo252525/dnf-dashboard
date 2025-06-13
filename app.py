@@ -10,8 +10,7 @@ conn = psycopg2.connect(
     port=st.secrets["DB_PORT"],
     dbname=st.secrets["DB_NAME"],
     user=st.secrets["DB_USER"],
-    password=st.secrets["DB_PASSWORD"],
-    sslmode='require'
+    password=st.secrets["DB_PASSWORD"]
 )
 query = "SELECT * FROM mv_fame_distribution_1k;"
 df = pd.read_sql(query, conn)
